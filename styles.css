@@ -1,0 +1,29 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2B1323;
+}
+
+.table-scene {
+    position: relative;
+    width: min(90vw, 900px);
+    min-height: 500px;
+    border-radius: 32px;
+    background: radial-gradient(circle at center, #8A5068, #5B2A42);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+.crystal-ball {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px solid #79b0c7;
+    background: radial-gradient(circle at center, #D5EDF7, #F5F8FA, #B0D9EB);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+    top: 30px;
+    left: calc(50% - 100px);
+}
