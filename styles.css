@@ -16,14 +16,31 @@ body {
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
 }
 
+.crystal-ball-stand {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
 .crystal-ball {
     position: relative;
+    z-index: 2;
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    border: 1px solid #79b0c7;
+    border: 1px solid #79B0C7;
     background: radial-gradient(circle at center, #D5EDF7, #F5F8FA, #B0D9EB);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
-    top: 30px;
-    left: calc(50% - 100px);
+}
+
+.plinth {
+    position: relative;
+    z-index: 1;
+    width: 140px;
+    height: 45px;
+    margin: -12px auto 0;
+    border-radius: 50% 50% 16px 16px;
+    background: linear-gradient(#6B4A3A, #3E241D);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.45);
 }
