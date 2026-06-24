@@ -49,9 +49,14 @@ const createTarotReading = ({ cards, auras, predictions }) => {
     const card = getRandomItem(cards);
     const aura = getRandomItem(auras);
     const prediction = getRandomItem(predictions);
-    return `The card you have selected is "${card}".`
-        + `\nThis card signifies ${aura}.`
+    return `The card you have selected is: ${card}.`
+        + `\nThis card signifies: ${aura}.`
         + `\n${prediction}`;
 }
 
-console.log(createTarotReading(tarotData));
+const crystalBall = document.querySelector('.crystal-ball');
+const readingText = document.querySelector('.reading-text');
+
+crystalBall.addEventListener('click', () => {
+    readingText.textContent = createTarotReading(tarotData);
+});

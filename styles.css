@@ -130,7 +130,7 @@ body {
 
 .crystal-ball-stand {
     position: absolute;
-    top: 30px;
+    top: -60px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -138,12 +138,26 @@ body {
 .crystal-ball {
     position: relative;
     z-index: 2;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     border: 1px solid #79B0C7;
     background: radial-gradient(circle at center, #D5EDF7, #F5F8FA, #B0D9EB);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.reading-text {
+    width: 75%;
+    margin: 0;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #2B1323;
+    white-space: pre-line;
 }
 
 .plinth {
