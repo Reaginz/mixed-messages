@@ -40,3 +40,11 @@ const tarotData = {
                     'The spirits wish to remind you that nobody really understands their health insurance.'
                 ]
 }
+
+const getRandomInt = max => Math.floor(Math.random() * max);
+
+const drawCard = deck => deck[getRandomInt(deck.length)];
+
+const selectAura = auras => auras[getRandomInt(auras.length)];
+
+const makePrediction = predictions => predictions[getRandomInt(predictions.length)];
