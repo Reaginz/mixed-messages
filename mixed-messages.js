@@ -1,5 +1,5 @@
 const tarotData = {
-    cards:  [
+    deck:  [
                 'The Turkey', 'The Donkey', 'The Bonobo', 'The Axolotl',
                 'Nausea', 'Awkwardness', 'Righteous Indignation', 'Schadenfreude',
                 'The Banana Cream Pie', 'The Leftover Mashed Potatoes', 'The Casserole', 'The Wheel of Gouda',
@@ -48,3 +48,7 @@ const drawCard = deck => deck[getRandomInt(deck.length)];
 const selectAura = auras => auras[getRandomInt(auras.length)];
 
 const makePrediction = predictions => predictions[getRandomInt(predictions.length)];
+
+const consultTarotReader = tarotReaderData => `The card you have selected is "${drawCard(tarotReaderData['deck'])}".\nThis card signifies ${selectAura(tarotReaderData['auras'])}.\n${makePrediction(tarotReaderData['predictions'])}`;
+
+console.log(consultTarotReader(tarotData));
