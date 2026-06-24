@@ -9,18 +9,97 @@ body {
 
 .table-scene {
     position: relative;
-    width: min(90vw, 900px);
-    min-height: 500px;
+    width: min(90vw, 1200px);
+    min-height: 600px;
     border-radius: 32px;
     background: radial-gradient(circle at center, #8A5068, #5B2A42);
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+.card-deck {
+    position: absolute;
+    top: 150px;
+    left: 70px;
+    width: 150px;
+    height: 200px;
+}
+
+.deck-card {
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    border: 2px solid #0D3818;
+    border-radius: 5px;
+    background: #1F6B35;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.35);
+}
+
+.deck-card-1 {
+    transform: rotate(4deg);
+}
+
+.deck-card-2 {
+    top: 3px;
+    left: -2px;
+    transform: rotate(1deg);
+}
+
+.deck-card-3 {
+    top: 3px;
+    left: 2px;
+    transform: rotate(-7deg);
+}
+
+.deck-card-4 {
+    top: 6px;
+    left: 5px;
+    transform: rotate(-3deg);
+}
+
+.deck-card-5 {
+    top: 11px;
+    left: -3px;
+    transform: rotate(2deg);
+}
+
+.deck-card-5::before,
+.deck-card-5::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
+    transform: translate(-50%, -50%);
+}
+
+.deck-card-5::before {
+    width: 90px;
+    height: 90px;
+    background: #D6B84A;
+}
+
+.deck-card-5::after {
+    width: 62px;
+    height: 62px;
+    background: #F8F5E8;
 }
 
 .crystal-ball-stand {
     position: absolute;
     top: 30px;
     left: 50%;
-    transform: translate(-50%);
+    transform: translateX(-50%);
 }
 
 .crystal-ball {
@@ -43,4 +122,17 @@ body {
     border-radius: 50% 50% 16px 16px;
     background: linear-gradient(#6B4A3A, #3E241D);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.45);
+}
+
+.card {
+    position: absolute;
+    top: 320px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-12deg);
+    width: 150px;
+    height: 200px;
+    background: linear-gradient(45deg, #e8e8e7, #a7a7a7);
+    border: 2px solid #0d3818;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.45);
 }
