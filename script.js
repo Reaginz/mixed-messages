@@ -71,9 +71,18 @@ const crystalBall = document.querySelector('.crystal-ball');
 const readingText = document.querySelector('.reading-text');
 const cardSymbol = document.querySelector('.card-symbol');
 
+const replayFade = element => {
+    element.classList.remove('fade-in');
+    void element.offsetWidth;
+    element.classList.add('fade-in');
+}
+
 const updateCardImage = images => {
     cardSymbol.classList.remove(...images);
     cardSymbol.classList.add(getRandomItem(images));
+
+    replayFade(readingText);
+    replayFade(cardSymbol);
 };
 
 crystalBall.addEventListener('click', () => {

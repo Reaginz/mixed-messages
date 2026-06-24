@@ -143,7 +143,7 @@ body {
     border-radius: 50%;
     border: 1px solid #79B0C7;
     background: radial-gradient(circle at center, #D5EDF7, #F5F8FA, #B0D9EB);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 30px 40px rgba(0, 0, 0, 0.45);
 
     display: flex;
     justify-content: center;
@@ -511,4 +511,18 @@ body {
     left: 32px;
     background: #D6B84A;
     transform: rotate(30deg);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 2000ms ease-out;
 }
