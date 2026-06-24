@@ -32,6 +32,39 @@ body {
     border-radius: 5px;
     background: #1F6B35;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+}
+
+.corner {
+    position: absolute;
+    width: 46px;
+    height: 64px;
+    background: #8B1E2D;
+    border: 3px solid #2F5F9E;
+}
+
+.top-left {
+    top: 8px;
+    left: 8px;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.top-right {
+    top: 8px;
+    right: 8px;
+    clip-path: polygon(100% 0, 100% 100%, 0 0);
+}
+
+.bottom-left {
+    bottom: 8px;
+    left: 8px;
+    clip-path: polygon(0 100%, 0 0, 100% 100%);
+}
+
+.bottom-right {
+    right: 8px;
+    bottom: 8px;
+    clip-path: polygon(100% 100%, 0 100%, 100% 0);
 }
 
 .deck-card-1 {
