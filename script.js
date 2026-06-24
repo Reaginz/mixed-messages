@@ -75,7 +75,7 @@ const replayFade = element => {
     element.classList.remove('fade-in');
     void element.offsetWidth;
     element.classList.add('fade-in');
-}
+};
 
 const updateCardImage = images => {
     cardSymbol.classList.remove(...images);
