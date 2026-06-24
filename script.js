@@ -38,6 +38,18 @@ const tarotData = {
         'An ancient mystery will be revealed to you through a typo.',
         'You will find what you seek immediately after giving up looking for it.',
         'The spirits wish to remind you that nobody really understands their health insurance.'
+    ],
+    images: [
+        'sigil-orbit',
+        'sigil-diamond',
+        'sigil-triangle',
+        'sigil-crescent',
+        'sigil-cross',
+        'sigil-eye',
+        'sigil-hourglass',
+        'sigil-spiral',
+        'sigil-compass',
+        'sigil-rune'
     ]
 }
 
@@ -49,14 +61,22 @@ const createTarotReading = ({ cards, auras, predictions }) => {
     const card = getRandomItem(cards);
     const aura = getRandomItem(auras);
     const prediction = getRandomItem(predictions);
-    return `The card you have selected is: ${card}.`
-        + `\nThis card signifies: ${aura}.`
-        + `\n${prediction}`;
-}
+
+    return `Your card is:\n${card}`
+        + `\n\nThis card represents:\n${aura}`
+        + `\n\n${prediction}`;
+};
 
 const crystalBall = document.querySelector('.crystal-ball');
 const readingText = document.querySelector('.reading-text');
+const cardSymbol = document.querySelector('.card-symbol');
+
+const updateCardImage = images => {
+    cardSymbol.classList.remove(...images);
+    cardSymbol.classList.add(getRandomItem(images));
+};
 
 crystalBall.addEventListener('click', () => {
     readingText.textContent = createTarotReading(tarotData);
+    updateCardImage(tarotData.images);
 });
