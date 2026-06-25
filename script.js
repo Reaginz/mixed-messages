@@ -51,7 +51,7 @@ const tarotData = {
         'sigil-compass',
         'sigil-rune'
     ]
-}
+};
 
 const getRandomInt = array => Math.floor(Math.random() * array.length);
 
