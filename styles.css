@@ -156,6 +156,47 @@ body {
     width: 32px;
 }
 
+.wick {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    height: 10px;
+    width: 5px;
+    background: #070707;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.flame {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    width: 12px;
+    height: 20px;
+    background: linear-gradient(
+        to bottom,
+        #FCFF47,
+        #FFD84C,
+        #DB8000,
+        #DA5909
+    );
+    border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.flame::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 4px;
+    width: 5px;
+    height: 9px;
+    background: #FFF9C4;
+    border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%;
+    transform: translateX(-50%);
+}
+
 .crystal-ball-stand {
     position: absolute;
     top: -60px;
