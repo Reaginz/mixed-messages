@@ -1,5 +1,5 @@
 const tarotData = {
-    cards:  [
+    cards: [
         'The Turkey', 'The Donkey', 'The Bonobo', 'The Axolotl',
         'Nausea', 'Awkwardness', 'Righteous Indignation', 'Schadenfreude',
         'The Banana Cream Pie', 'The Leftover Mashed Potatoes', 'The Casserole', 'The Wheel of Gouda',
@@ -7,7 +7,7 @@ const tarotData = {
         'The Colander', 'The Wok', 'The Springform Pan', 'The Mason Jar',
         'The Bank Teller', 'The Beekeeper'
     ],
-    auras:  [
+    auras: [
         'Hunger', 'Crankiness', 'Sorrow', 'Indecision',
         'Cleanliness', 'Confusion', 'Loss of Appetite', 'Procrastination',
         'Hyperactivity', 'Macroeconomics', 'Social Media', 'The Andromeda Galaxy',
@@ -39,7 +39,7 @@ const tarotData = {
         'You will find what you seek immediately after giving up looking for it.',
         'The spirits wish to remind you that nobody really understands their health insurance.'
     ],
-    images: [
+    sigils: [
         'sigil-orbit',
         'sigil-diamond',
         'sigil-triangle',
@@ -53,39 +53,45 @@ const tarotData = {
     ]
 };
 
-const getRandomInt = array => Math.floor(Math.random() * array.length);
+const elements = {
+    crystalBall: document.querySelector('.crystal-ball'),
+    readingText: document.querySelector('.reading-text'),
+    cardSymbol: document.querySelector('.card-symbol')
+};
 
-const getRandomItem = array => array[getRandomInt(array)];
+const getRandomIndex = array => Math.floor(Math.random() * array.length);
+
+const getRandomItem = array => array[getRandomIndex(array)];
 
 const createTarotReading = ({ cards, auras, predictions }) => {
-    const card = getRandomItem(cards);
-    const aura = getRandomItem(auras);
-    const prediction = getRandomItem(predictions);
+    const reading = {
+        card: getRandomItem(cards),
+        aura: getRandomItem(auras),
+        prediction: getRandomItem(predictions)
+    };
 
-    return `Your card is:\n${card}`
-        + `\n\nThis card represents:\n${aura}`
-        + `\n\n${prediction}`;
+    return `Your card is:\n${reading.card}`
+        + `\n\nThis card represents:\n${reading.aura}`
+        + `\n\n${reading.prediction}`;
 };
 
-const crystalBall = document.querySelector('.crystal-ball');
-const readingText = document.querySelector('.reading-text');
-const cardSymbol = document.querySelector('.card-symbol');
-
-const replayFade = element => {
-    element.classList.remove('fade-in');
+const replayAnimation = (element, animationClass) => {
+    element.classList.remove(animationClass);
     void element.offsetWidth;
-    element.classList.add('fade-in');
+    element.classList.add(animationClass);
 };
 
-const updateCardImage = images => {
-    cardSymbol.classList.remove(...images);
-    cardSymbol.classList.add(getRandomItem(images));
-
-    replayFade(readingText);
-    replayFade(cardSymbol);
+const updateCardSigil = (cardSymbol, sigils) => {
+    cardSymbol.classList.remove(...sigils);
+    cardSymbol.classList.add(getRandomItem(sigils));
 };
 
-crystalBall.addEventListener('click', () => {
-    readingText.textContent = createTarotReading(tarotData);
-    updateCardImage(tarotData.images);
-});
+const updateReadingDisplay = () => {
+    elements.readingText.textContent = createTarotReading(tarotData);
+    updateCardSigil(elements.cardSymbol, tarotData.sigils);
+
+    replayAnimation(elements.readingText, 'fade-in');
+    replayAnimation(elements.cardSymbol, 'fade-in');
+};
+
+elements.crystalBall.addEventListener('click', updateReadingDisplay);
