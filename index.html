@@ -4,56 +4,27 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>Mixed Messages</title>
+        <title>Mixed Messages | Bad Tarot Reader</title>
 
         <link href="./styles.css" rel="stylesheet" />
     </head>
     <body>
-        <main class="table-scene">
-            <div class="card-deck">
-                <div class="deck-card deck-card-1">
-                    <span class="corner top-left"></span>
-                    <span class="corner top-right"></span>
-                    <span class="corner bottom-left"></span>
-                    <span class="corner bottom-right"></span>
-                </div>
-
-                <div class="deck-card deck-card-2">
-                    <span class="corner top-left"></span>
-                    <span class="corner top-right"></span>
-                    <span class="corner bottom-left"></span>
-                    <span class="corner bottom-right"></span>
-                </div>
-
-                <div class="deck-card deck-card-3">
-                    <span class="corner top-left"></span>
-                    <span class="corner top-right"></span>
-                    <span class="corner bottom-left"></span>
-                    <span class="corner bottom-right"></span>
-                </div>
-
-                <div class="deck-card deck-card-4">
-                    <span class="corner top-left"></span>
-                    <span class="corner top-right"></span>
-                    <span class="corner bottom-left"></span>
-                    <span class="corner bottom-right"></span>
-                </div>
-
-                <div class="deck-card deck-card-5">
-                    <span class="corner top-left"></span>
-                    <span class="corner top-right"></span>
-                    <span class="corner bottom-left"></span>
-                    <span class="corner bottom-right"></span>
-                </div>
+        <main class="table-scene" aria-label="Bad tarot reader">
+            <div class="card-deck" aria-hidden="true">
+                <div class="deck-card deck-card-1"></div>
+                <div class="deck-card deck-card-2"></div>
+                <div class="deck-card deck-card-3"></div>
+                <div class="deck-card deck-card-4"></div>
+                <div class="deck-card deck-card-5"></div>
             </div>
 
-            <div class="table-glows">
+            <div class="table-glows" aria-hidden="true">
                 <div class="table-glow glow-left"></div>
                 <div class="table-glow glow-upper-right"></div>
                 <div class="table-glow glow-lower-right"></div>
             </div>
 
-            <div class="candles">
+            <div class="candles" aria-hidden="true">
                 <div class="candle candle-short">
                     <div class="flame"></div>
                     <div class="wick"></div>
@@ -71,13 +42,13 @@
             </div>
 
             <div class="crystal-ball-stand">
-                <div class="crystal-ball">
-                    <p class="reading-text">Click the crystal ball to receive your reading!</p>
-                </div>
-                <div class="plinth"></div>
+                <button class="crystal-ball" type="button">
+                    <span class="reading-text">Click the crystal ball to receive your reading!</span>
+                </button>
+                <div class="plinth" aria-hidden="true"></div>
             </div>
 
-            <div class="card">
+            <div class="card" aria-hidden="true">
                 <div class="card-symbol"></div>
             </div>
         </main>
